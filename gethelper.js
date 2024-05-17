@@ -1,6 +1,6 @@
 function radarechotest(request, session, config) {
   log("Virtual Test running")
-  requestpath = request.URL.split('/radar')[1]
+  requestpath = request.URL.split('/radar')[1] //assumes path of helper is /radar - otherwise change it!
 
 
   hold = request.Headers["Authorization"][0]
