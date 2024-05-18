@@ -13,7 +13,7 @@ function radarechotest(request, session, config) {
     "Method": "GET",
     "Body": "",
     "Domain": "https://radar.wandera.com",
-    "Headers": {"Accept": "application/json", "X-Xsrf-Token": xsrf, "Cookie": "XSRF-TOKEN="+xsrf+";SESSION="+sessioncookie}
+    "Headers": {"Accept": "application/json", "X-Xsrf-Token": xsrf, "Cookie": "XSRF-TOKEN="+xsrf+";SESSION="+sessioncookie},
     "Resource": requestpath,
     "FormData": {}
   };
@@ -22,11 +22,11 @@ function radarechotest(request, session, config) {
   usableResponse = JSON.parse(response)
 
   var responseObject = {
-    Body: usableResponse.Body
+    Body: usableResponse.Body,
     Headers: {
       "Content-Type": "application/json"
     },
-    Code: 200
+    Code: 200 //need to change this to mirror the response code
   }
   
   return TykJsResponse(responseObject, session.meta_data)   

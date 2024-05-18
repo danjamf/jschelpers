@@ -20,7 +20,7 @@ userpass = decodedString.split(':')[1]
     "Method": "GET",
     "Body": "",
     "Domain": "https://radar.wandera.com",
-    "Headers": {"Accept": "application/json"}
+    "Headers": {"Accept": "application/json"},
     "Resource": "/auth/v1/login-methods?email=" + useremail,
     "FormData": {}
   };
@@ -38,7 +38,7 @@ userpass = decodedString.split(':')[1]
     "Method": "POST",
     "Body": "{\"username\":\""+useremail+"\",\"password\":\""+userpass+"\",\"totp\":\"\",\"backupCode\":\"\"}",
     "Domain": "https://radar.wandera.com",
-    "Headers": {"Accept": "application/json", "X-Xsrf-Token": tokenValue, "Cookie": usableResponse.Headers["Set-Cookie"][0] }
+    "Headers": {"Accept": "application/json", "X-Xsrf-Token": tokenValue, "Cookie": usableResponse.Headers["Set-Cookie"][0] },
     "Resource": "/auth/v1/credentials",
     "FormData": {}
   };
@@ -52,7 +52,7 @@ userpass = decodedString.split(':')[1]
 
 
   var responseObject = {
-    Body: '{"access_token":"' + newbearer + '","token_type":"Bearer","expires_in":599}' 
+    Body: '{"access_token":"' + newbearer + '","token_type":"Bearer","expires_in":599}',
     Headers: {
       "Bearer": tokenValue + '&' + tokenValue2,
       "x-test-2": "virtual-header-2"
